@@ -21,9 +21,8 @@ using SQLite.Net;
 
 namespace StartFinance.Views
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+    //Tafe21S102(Personal_info) - Kiel Caralipio
+
     public sealed partial class PersonalInfoPage : Page
     {
         SQLiteConnection conn; // adding an SQLite connection
@@ -47,9 +46,8 @@ namespace StartFinance.Views
             var query = conn.Table<PersonalInfo>();
             PersonalInfoListView.ItemsSource = query.ToList();
         }
-
-       
-
+        
+        //Clears fields
         private async void ClearFileds_Click(object sender, RoutedEventArgs e)
         {
             FirstNameText.Text = string.Empty;
@@ -66,8 +64,7 @@ namespace StartFinance.Views
             Results();
         }
 
-      
-        //Add Button
+        //Add Button -  Add data
         private async void AppBarButton_Click_1(object sender, RoutedEventArgs e)
         {
             try
@@ -89,7 +86,7 @@ namespace StartFinance.Views
                     Results();
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) 
             {
                 if (ex is FormatException)
                 {
@@ -103,7 +100,7 @@ namespace StartFinance.Views
                 }
             }
         }
-        //Update Button
+        //Update Button - updates Data
         private async void AppBarButton_Click_2(object sender, RoutedEventArgs e)
         {
             MessageDialog md;
@@ -130,9 +127,9 @@ namespace StartFinance.Views
         }
 
 
-            //Delete Button
+            //Delete Button - Deletes Data
             private async void AppBarButton_Click_3(object sender, RoutedEventArgs e)
-        {
+            {
             try
             {
                 string InfoSelection = ((PersonalInfo)PersonalInfoListView.SelectedItem).FirstName;

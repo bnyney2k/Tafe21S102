@@ -5,8 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Tafe21S102(Personal_info) - Kiel Caralipio
 namespace StartFinance.Models
 {
+    
     public class PersonalInfo
     {
         [PrimaryKey, AutoIncrement]
