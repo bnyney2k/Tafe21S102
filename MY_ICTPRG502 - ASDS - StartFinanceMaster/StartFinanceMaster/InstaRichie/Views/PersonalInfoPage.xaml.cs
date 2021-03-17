@@ -84,7 +84,7 @@ namespace StartFinance.Views
                         FirstName = FirstNameText.Text,
                         LastName = LastNameText.Text,
                         Email = EmailText.Text,
-                        MobilePhone = Convert.ToInt32(MobilePhone.Text)
+                        MobilePhone = MobilePhone.Text
                     });
                     Results();
                 }
@@ -106,15 +106,32 @@ namespace StartFinance.Views
         //Update Button
         private async void AppBarButton_Click_2(object sender, RoutedEventArgs e)
         {
+            MessageDialog md;
+
+            PersonalInfo personalInfo = (PersonalInfo)PersonalInfoListView.SelectedItem;
+
+            personalInfo.FirstName = FirstNameText.Text;
+            personalInfo.LastName = LastNameText.Text;
+            personalInfo.Email = EmailText.Text;
+            personalInfo.MobilePhone = MobilePhone.Text;
 
 
+            if (conn.Update(personalInfo) > 0)
+            {
+                Results();
+                md = new MessageDialog("Update Successful");
+            }
+            else
+            {
+                md = new MessageDialog("Error! Invalid data, Update failed");
+            }
 
-
+            await md.ShowAsync();
         }
 
 
-        //Delete Button
-        private async void AppBarButton_Click_3(object sender, RoutedEventArgs e)
+            //Delete Button
+            private async void AppBarButton_Click_3(object sender, RoutedEventArgs e)
         {
             try
             {
