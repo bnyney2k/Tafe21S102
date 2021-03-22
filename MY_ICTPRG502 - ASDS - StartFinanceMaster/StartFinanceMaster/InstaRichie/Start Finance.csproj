@@ -129,17 +129,14 @@
     <Compile Include="Views\Busy.xaml.cs">
       <DependentUpon>Busy.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\ContactDetailListPage.xaml.cs">
-      <DependentUpon>ContactDetailListPage.xaml</DependentUpon>
+    <Compile Include="Views\ContactInfo.xaml.cs">
+      <DependentUpon>ContactInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DashBoardPage.xaml.cs">
       <DependentUpon>DashBoardPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DebtPage.xaml.cs">
       <DependentUpon>DebtPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\DeleteContactDetail.xaml.cs">
-      <DependentUpon>DeleteContactDetail.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DetailPage.xaml.cs">
       <DependentUpon>DetailPage.xaml</DependentUpon>
@@ -213,7 +210,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\ContactDetailListPage.xaml">
+    <Page Include="Views\ContactInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -222,10 +219,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DebtPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\DeleteContactDetail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
