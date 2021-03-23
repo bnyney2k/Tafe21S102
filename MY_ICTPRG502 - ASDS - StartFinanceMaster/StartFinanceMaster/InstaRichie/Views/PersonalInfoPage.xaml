@@ -16,7 +16,6 @@
         <DataTemplate x:Key="PersonalInfoListDatavalue">
             <Grid>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="{Binding PersonalID}" Padding="0,0,15,0"/>
                     <TextBlock Text="{Binding FirstName}" Padding="0,0,15,0"/>
                     <TextBlock Text="{Binding LastName}" Padding="0,0,15,0"/>
                     <TextBlock Text="{Binding Email}" Padding="0,0,15,0"/>
@@ -97,7 +96,6 @@
                     </Grid.RowDefinitions>
                     <StackPanel x:Name="pageStart" Grid.Row="0" VerticalAlignment="Top"
                                 Orientation="Vertical" Margin="10,0,10,0" Height="275">
-                        <TextBox x:Name="PersonalIDText"  Header="Personal ID"/>
                         <TextBox x:Name="FirstNameText"  Header="First Name"/>
                         <TextBox x:Name="LastNameText"  Header="Last Name"/>
                         <TextBox x:Name="EmailText"  Header="Email"/>
