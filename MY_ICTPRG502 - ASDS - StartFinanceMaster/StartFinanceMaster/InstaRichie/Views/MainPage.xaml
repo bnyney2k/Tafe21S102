@@ -69,6 +69,7 @@
             <controls:PageHeader.PrimaryCommands>
                 <AppBarButton Icon="Add" Label="Add Transaction" />
                 <AppBarButton Icon="Delete" Label="Delete"/>
+                <AppBarButton Icon="Edit" Label="Edit"/>
             </controls:PageHeader.PrimaryCommands>
 
         </controls:PageHeader>
