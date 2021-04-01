@@ -40,10 +40,10 @@ namespace StartFinance.Views
         public void Results()
         {
             // Creating table
-            conn.CreateTable<ContactInfo>();
+            conn.CreateTable<ContactDetail>();
 
             /// Refresh Data
-            var query = conn.Table<ContactInfo>();
+            var query = conn.Table<ContactDetail>();
             ContactListView.ItemsSource = query.ToList();
         }
 
@@ -72,6 +72,11 @@ namespace StartFinance.Views
                 if (FirstNameText.Text.ToString() == "")
                 {
                     MessageDialog dialog = new MessageDialog("No First Name entered", "Oops..!");
+                    await dialog.ShowAsync();
+                }
+                else if(LastNameText.Text.ToString() == "")
+                {
+                    MessageDialog dialog = new MessageDialog("No Last Name entered", "Oops..!");
                     await dialog.ShowAsync();
                 }
                 else
@@ -105,15 +110,15 @@ namespace StartFinance.Views
         {
             MessageDialog md;
 
-            ContactDetail contactInfo = (ContactDetail)ContactListView.SelectedItem;
+            ContactDetail contactDetail = (ContactDetail)ContactListView.SelectedItem;
 
-            contactInfo.FirstName = FirstNameText.Text;
-            contactInfo.LastName = LastNameText.Text;
-            contactInfo.CompanyName = CompanyName.Text;
-            contactInfo.MobilePhone = MobilePhone.Text;
+            contactDetail.FirstName = FirstNameText.Text;
+            contactDetail.LastName = LastNameText.Text;
+            contactDetail.CompanyName = CompanyName.Text;
+            contactDetail.MobilePhone = MobilePhone.Text;
 
 
-            if (conn.Update(contactInfo) > 0)
+            if (conn.Update(contactDetail) > 0)
             {
                 Results();
                 md = new MessageDialog("Update Successful");
