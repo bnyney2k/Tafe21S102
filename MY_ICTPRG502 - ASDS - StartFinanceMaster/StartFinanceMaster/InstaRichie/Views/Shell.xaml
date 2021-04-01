@@ -98,6 +98,19 @@
                                Text="WishList" />
                 </StackPanel>
             </Controls:HamburgerButtonInfo>
+
+            <!--Contact details button -->
+            <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:ContactInfo" 
+                                          AutomationProperties.Name="Jerry"
+                                          >
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Width="48" Height="48"
+                		Symbol="ProtectedDocument" />
+                    <TextBlock Margin="12,0,0,0" VerticalAlignment="Center"
+                               Text="Contact info" />
+                </StackPanel>
+            </Controls:HamburgerButtonInfo>
+
         </Controls:HamburgerMenu.PrimaryButtons>
 
         <Controls:HamburgerMenu.SecondaryButtons>
