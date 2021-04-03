@@ -98,7 +98,22 @@
                                Text="WishList" />
                 </StackPanel>
             </Controls:HamburgerButtonInfo>
+
+            <!--  Appoinment button  -->
+            <Controls:HamburgerButtonInfo ClearHistory="True" PageType="views:AppointmentPage" 
+                                          AutomationProperties.Name="Jerry"
+                                          >
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Width="48" Height="48"
+                		Symbol="Bookmarks" />
+                    <TextBlock Margin="12,0,0,0" VerticalAlignment="Center"
+                               Text="Appointment" />
+                </StackPanel>
+            </Controls:HamburgerButtonInfo>
         </Controls:HamburgerMenu.PrimaryButtons>
+
+
+        
 
         <Controls:HamburgerMenu.SecondaryButtons>
             <!--  settingspage button  -->

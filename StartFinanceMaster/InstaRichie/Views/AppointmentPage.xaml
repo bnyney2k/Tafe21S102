@@ -1,0 +1,142 @@
+﻿<!--
+Program: Start Finance
+Author: Zheru Chen
+Date: 03 April 2021
+Responsbility Part: Appointment 
+-->
+    
+<Page
+    x:Class="StartFinance.Views.AppointmentPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Behaviors="using:Template10.Behaviors"
+    xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:controls="using:Template10.Controls"
+    xmlns:local="using:StartFinance.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:StartFinance.ViewModels" mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="AdaptiveVisualStateGroup">
+                <VisualState x:Name="VisualStateNarrow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource NarrowMinWidth}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--  TODO: change properties for narrow view  -->
+                        <!--<Setter Target="AccDataGrid.(RelativePanel.Below)" Value="pageStart" />-->
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="VisualStateNormal">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource NormalMinWidth}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--  TODO: change properties for normal view  -->
+                        <!--<Setter Target="AccDataGrid.(RelativePanel.RightOf)" Value="pageStart" />-->
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="VisualStateWide">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource WideMinWidth}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--  TODO: change properties for wide view  -->
+                        <!--<Setter Target="AccDataGrid.(RelativePanel.RightOf)" Value="pageStart" />-->
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <controls:PageHeader x:Name="pageHeader" RelativePanel.AlignLeftWithPanel="True" 
+                             RelativePanel.AlignRightWithPanel="True" 
+                             RelativePanel.AlignTopWithPanel="True" Text="Add Appointment">
+            <!-- Secondary commands-->
+            
+        </controls:PageHeader>
+
+        <controls:PageHeader x:Name="AddFooter" RelativePanel.AlignLeftWithPanel="True"
+                             RelativePanel.AlignRightWithPanel="True"
+                             RelativePanel.AlignBottomWithPanel="True">
+
+            <!--  secondary commands  -->
+            <controls:PageHeader.PrimaryCommands>
+                <AppBarButton Icon="Add" Label="Add Appointment" Click="Add_Click"/>
+            </controls:PageHeader.PrimaryCommands>
+
+        </controls:PageHeader>
+        <controls:PageHeader x:Name="DeleteFooter" RelativePanel.AlignLeftWithPanel="True"
+                             RelativePanel.AlignRightWithPanel="True"
+                             RelativePanel.AlignBottomWithPanel="True">
+
+            <!--  secondary commands  -->
+            <controls:PageHeader.PrimaryCommands>
+                <AppBarButton Icon="Delete" Label="Cancel Appointment" Click="Delete_Click"/>
+            </controls:PageHeader.PrimaryCommands>
+
+        </controls:PageHeader>
+        <controls:PageHeader x:Name="UpdateFooter" RelativePanel.AlignLeftWithPanel="True"
+                             RelativePanel.AlignRightWithPanel="True"
+                             RelativePanel.AlignBottomWithPanel="True">
+
+            <!--  secondary commands  -->
+            <controls:PageHeader.PrimaryCommands>
+                <AppBarButton Icon="Add" Label="update Appointment" Click="Update_Click"/>
+            </controls:PageHeader.PrimaryCommands>
+
+        </controls:PageHeader>
+
+        <!--Page Conetents start here-->
+        <Pivot Grid.Row="1" x:Name="AppointmentTypeContent" SelectionChanged="Pivot_SelectionChanged">
+            <RelativePanel.Below>pageHeader</RelativePanel.Below>
+            <PivotItem Header="Add Appointment">
+                <Grid>
+                    <StackPanel Grid.Row="1" VerticalAlignment="Top" Orientation="Vertical" Margin="10,5,10,0">
+                        <TextBlock x:Name="AddAppoitmentID" Text="Appointment ID create when you book successfully" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                        <TextBox x:Name="AddEventName" Header="Event Name" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                        <TextBox x:Name="Location" Header="Location" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                        <TextBox x:Name="PhoneNo" Header="Phone Number" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                        <CalendarDatePicker x:Name="AddDate" Header="Choose Date" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                        <TimePicker x:Name="AddStartTime" Header="Start Date" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+                        <TimePicker x:Name="AddEndTime" Header="End Date" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+                        <ComboBox x:Name="AddAppoinmentSelect" Header="Select Add Appointment" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectedIndex="0">
+                            <ComboBoxItem Content="Add Appointment"/>
+                        </ComboBox>
+                        <TextBox x:Name="AddAppointmentDesc" Header="Description" PlaceholderText="Food, Travel, Utilities..."/>
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Delete Appointment">
+                <Grid>
+                    <StackPanel Grid.Row="1" VerticalAlignment="Top" Orientation="Vertical" Margin="10,5,10,0">
+                        <TextBox x:Name="DeleteAppoitmentID" Header="Appointment ID" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" PlaceholderText="optional"/>
+                        <CalendarDatePicker x:Name="DeleteStartDate" Header="Start Date" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                        <TimePicker x:Name="DeleteStartTime" Header="Start Date" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+                        <ComboBox x:Name="DeleteAppointmentSelect" Header="Select Delete Appointment" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectedIndex="0" PlaceholderText="Select Delete Appointment">
+                            <ComboBoxItem Content="Delete Appointment"/>
+                        </ComboBox>
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Update Appointment">
+                <Grid>
+                    <StackPanel Grid.Row="1" VerticalAlignment="Top" Orientation="Vertical" Margin="10,5,10,0">
+                        <TextBox x:Name="UpdateAppoitmentID" Header="Appointment ID" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                        <TextBox x:Name="UpdateEventName" Header="Event Name" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                        <CalendarDatePicker x:Name="UpdateStartDate" Header="Start Date" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                        <TimePicker x:Name="UpdateStartTime" Header="Start Date" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+                        <TimePicker x:Name="UpdateEndTime" Header="End Date" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+                        <ComboBox x:Name="UpdateAppoinmentSelect" Header="Select Add Appointment" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectedIndex="0">
+                            <ComboBoxItem Content="Update Appointment"/>
+                        </ComboBox>
+                        <TextBox x:Name="UpdateDesc" Header="Description" PlaceholderText="Food, Travel, Utilities..."/>
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+        </Pivot>
+    </RelativePanel>
+</Page>
