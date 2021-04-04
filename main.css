@@ -1,9 +1,24 @@
+html {
+   margin: 20px;
+   background-color: #EDF5C8;
+}
+body {
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
+   font-weight: 300;
+   color: #333;
+   font: 400 15px Lato, sans-serif;
+   line-height: 1.8;
+   background-color: #eeeeee;
+} 
+h1 {
+     font-size: 50px;
+   }
+P {
+     font-size: 20px;
+  }
 
- body {
-      font: 400 15px Lato, sans-serif;
-      line-height: 1.8;
-     
-      background-color: #eeeeee;
+
+
   }
   
   h2 {
