@@ -5,7 +5,8 @@ html {
 }
 body {
       font-family:"HelveticaNeue-Light", "Helvetica Neue Light";
-      font-weight:300;     
+      font-weight:300;  
+      font-color: #ABEBC6;
       background-color:#D0D3D4;  
 }
 
