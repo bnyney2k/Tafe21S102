@@ -101,8 +101,8 @@ Responsbility Part: Appointment
                         <TextBox x:Name="Location" Header="Location" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                         <TextBox x:Name="PhoneNo" Header="Phone Number" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                         <CalendarDatePicker x:Name="AddDate" Header="Choose Date" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                        <TimePicker x:Name="AddStartTime" Header="Start Date" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
-                        <TimePicker x:Name="AddEndTime" Header="End Date" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+                        <TimePicker x:Name="AddStartTime" Header="Start Time" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+                        <TimePicker x:Name="AddEndTime" Header="End Time" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
                         <ComboBox x:Name="AddAppoinmentSelect" Header="Select Add Appointment" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectedIndex="0">
                             <ComboBoxItem Content="Add Appointment"/>
                         </ComboBox>
@@ -115,7 +115,7 @@ Responsbility Part: Appointment
                     <StackPanel Grid.Row="1" VerticalAlignment="Top" Orientation="Vertical" Margin="10,5,10,0">
                         <TextBox x:Name="DeleteAppoitmentID" Header="Appointment ID" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" PlaceholderText="optional"/>
                         <CalendarDatePicker x:Name="DeleteStartDate" Header="Start Date" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                        <TimePicker x:Name="DeleteStartTime" Header="Start Date" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+                        <TimePicker x:Name="DeleteStartTime" Header="Start Time" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
                         <ComboBox x:Name="DeleteAppointmentSelect" Header="Select Delete Appointment" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectedIndex="0" PlaceholderText="Select Delete Appointment">
                             <ComboBoxItem Content="Delete Appointment"/>
                         </ComboBox>
@@ -128,8 +128,8 @@ Responsbility Part: Appointment
                         <TextBox x:Name="UpdateAppoitmentID" Header="Appointment ID" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                         <TextBox x:Name="UpdateEventName" Header="Event Name" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
                         <CalendarDatePicker x:Name="UpdateStartDate" Header="Start Date" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                        <TimePicker x:Name="UpdateStartTime" Header="Start Date" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
-                        <TimePicker x:Name="UpdateEndTime" Header="End Date" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+                        <TimePicker x:Name="UpdateStartTime" Header="Start Time" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+                        <TimePicker x:Name="UpdateEndTime" Header="End Time" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
                         <ComboBox x:Name="UpdateAppoinmentSelect" Header="Select Add Appointment" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectedIndex="0">
                             <ComboBoxItem Content="Update Appointment"/>
                         </ComboBox>
