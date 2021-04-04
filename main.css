@@ -1,27 +1,22 @@
+
+
 html {
-   margin: 20px;
-   background-color: #EDF5C8;
+      margin: 20px;
+      background-color:#EDF5C8;
+
 }
 body {
-   font-family: "HelveticaNeue-Light", "Helvetica Neue Light";
-   font-weight: 300;
-   color: #333;
-   font: 400 15px Lato, sans-serif;
-   line-height: 1.8;
-   background-color: #eeeeee;
-} 
+      font-family:"HelveticaNeue-Light", "Helvetica Neue Light";
+      font-weight:300;     
+      background-color: #eeeeee;  
+}
+
 h1 {
-     font-size: 50px;
-   }
-P {
-     font-size: 20px;
-  }
-
-
-
-  }
-  
-  h2 {
+      font-size: 50px;
+}
+p {
+       font-size: 50px;}
+h2 {
       font-size: 24px;
       text-transform: uppercase;
       color: #303030;
@@ -29,7 +24,7 @@ P {
       margin-bottom: 30px;
   }
   
-  h4 {
+h4 {
       font-size: 19px;
       line-height: 1.375em;
       color: #303030;
